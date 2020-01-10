@@ -3,7 +3,7 @@
 
 Name:           mtdev
 Version:        1.1.3
-Release:        3%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Release:        4%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 Summary:        Multitouch Protocol Translation Library
 
 Group:          System Environment/Libraries
@@ -75,6 +75,9 @@ rm -rf %{buildroot}
 %{_bindir}/mtdev-test
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1.3-4
+- Mass rebuild 2013-12-27
+
 * Wed Apr 03 2013 Peter Hutterer <peter.hutterer@redhat.com> 1.1.3-3
 - Less RHEL customization
 
