@@ -2,8 +2,8 @@
 #global gitdate 20110105
 
 Name:           mtdev
-Version:        1.1.2
-Release:        5%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Version:        1.1.5
+Release:        1%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 Summary:        Multitouch Protocol Translation Library
 
 Group:          System Environment/Libraries
@@ -75,6 +75,9 @@ rm -rf %{buildroot}
 %{_bindir}/mtdev-test
 
 %changelog
+* Thu Nov 12 2015 Peter Hutterer <peter.hutterer@redhat.com> 1.1.5-1
+- mtdev 1.1.5 (#1248566)
+
 * Mon Oct 01 2012 Adam Jackson <ajax@redhat.com> 1.1.2-5
 - Fix disttag in release (#860177)
 

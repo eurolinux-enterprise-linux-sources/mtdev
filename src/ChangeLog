@@ -1,3 +1,149 @@
+commit 4381b78fea54de0e775bf54952b2f95e5a06c57d
+Author: Henrik Rydberg <rydberg@euromail.se>
+Date:   Fri Feb 28 19:57:15 2014 +0100
+
+    Release mtdev-1.1.5
+    
+    Signed-off-by: Henrik Rydberg <rydberg@euromail.se>
+
+commit 88840fe45b49464642181007c5a6df1bc951bade
+Author: Colin Walters <walters@verbum.org>
+Date:   Thu Feb 27 08:03:35 2014 -0500
+
+    build: Fix srcdir != builddir from git
+    
+    Make it possible to build the source out-of-tree. The gnome-continuous
+    build system does this by default.
+    
+    Signed-off-by: Colin Walters <walters@verbum.org>
+    [rydberg@euromail.se: Resolve merge conflict]
+    Signed-off-by: Henrik Rydberg <rydberg@euromail.se>
+
+commit 6d698f6dba4a024b5f3ccac2876465c60f780478
+Author: Ross Burton <ross.burton@intel.com>
+Date:   Fri Nov 15 23:41:29 2013 +0000
+
+    test: fix out-of-tree builds
+    
+    Some tests do #include  relative to the top-level, so add top_srcdir to the
+    include path as otherwise out-of-tree builds can't find the files.
+    
+    Signed-off-by: Ross Burton <ross.burton@intel.com>
+    Signed-off-by: Henrik Rydberg <rydberg@euromail.se>
+
+commit 25070dda4b1aaaf402db621d10fc901b82d78377
+Author: Henrik Rydberg <rydberg@euromail.se>
+Date:   Sat Aug 3 22:01:06 2013 +0200
+
+    Release mtdev-1.1.4
+    
+    Signed-off-by: Henrik Rydberg <rydberg@euromail.se>
+
+commit 72bbb5f42fe8e47d6314eb92a0ada6554644305c
+Merge: b5d8e8e a9ea316
+Author: Henrik Rydberg <rydberg@euromail.se>
+Date:   Wed Jul 31 19:25:50 2013 +0200
+
+    Merge more build fixes from Peter Hutterer, along with a more explicit
+    declaration of the backwards compatibility constraints on the API.
+    
+    Signed-off-by: Henrik Rydberg <rydberg@euromail.se>
+
+commit a9ea3168615056360cdb21d6f1576d66be2a43fe
+Author: Peter Hutterer <peter.hutterer@who-t.net>
+Date:   Wed Jul 24 14:24:43 2013 +1000
+
+    Enable silent rules by default
+    
+    silent rules make it easier to spot compiler errors
+    
+    Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
+
+commit 0bccf8c5268826bdb0835dd9b7964bcc95bae35f
+Author: Peter Hutterer <peter.hutterer@who-t.net>
+Date:   Wed Jul 24 14:23:25 2013 +1000
+
+    test: silence compiler warning - implicit declaration of function ‘atoi’
+    
+    mtdev-kernel.c:130:2: warning: implicit declaration of function ‘atoi’
+    [-Wimplicit-function-declaration]
+      eslot = atoi(argv[1]) + 1;
+    
+    Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
+
+commit 1ddaf0af41098d0a01eac162c6fe4d38f2fbbbad
+Author: Peter Hutterer <peter.hutterer@who-t.net>
+Date:   Wed Jul 24 13:00:32 2013 +1000
+
+    Fix compiler warning - implicit declaration of function 'abs'
+    
+    match_four.c:80:4: warning: implicit declaration of function 'abs'
+    [-Wimplicit-function-declaration]
+        *dist++ = abs(q->x - p->x) + abs(q->y - p->y);
+    
+    Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
+
+commit 6f7c5c558006bb69fdf0af73103097c012ccfed5
+Author: Peter Hutterer <peter.hutterer@who-t.net>
+Date:   Thu Jul 25 13:21:09 2013 +1000
+
+    Replace hardcoded 11 with a define
+    
+    The 11 comes from the legacy API that we need to be binary compatible with.
+    Make this clear with a define and a comment.
+    
+    Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
+
+commit b5d8e8e26c0116e4b6e556a0f6da8777bc55c590
+Merge: e5eb274 f4fe569
+Author: Henrik Rydberg <rydberg@euromail.se>
+Date:   Thu Jul 25 10:05:20 2013 +0200
+
+    Merge build fixes from Peter Hutterer.
+    
+    Signed-off-by: Henrik Rydberg <rydberg@euromail.se>
+
+commit f4fe56973a29265e22f049ceed1e299573f90ec4
+Author: Peter Hutterer <peter.hutterer@who-t.net>
+Date:   Wed Jul 3 15:49:21 2013 +1000
+
+    Rename INCLUDES to AM_CPPFLAGS
+    
+    src/Makefile.am:22: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+    
+    Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
+
+commit e79f2b211830dec2bae35595c6dfd1d06f75d903
+Author: Peter Hutterer <peter.hutterer@who-t.net>
+Date:   Wed Jul 3 15:45:12 2013 +1000
+
+    Drop maintainer mode - enable by default
+    
+    Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
+
+commit e5eb27494cd237e60645db4d7be5b4acf41cb5e0
+Author: Henrik Rydberg <rydberg@euromail.se>
+Date:   Wed Aug 22 22:20:16 2012 +0200
+
+    Release mtdev-1.1.3
+    
+    Signed-off-by: Henrik Rydberg <rydberg@euromail.se>
+
+commit 656d5c9d7e37a301afa3af9c2382d6b869f57ebf
+Author: David Kozub <zub@linux.fjfi.cvut.cz>
+Date:   Tue May 29 22:53:21 2012 +0200
+
+    Fix pc file to allow compiling with mtdev installed in non-std path.
+    
+    The pkgconfig file does not specify the -I flag needed to be able to
+    compile with `pkg-config mtdev --cflags` when libmtdev is installed to
+    a directory that is not searched by the C compiler by default.
+    
+    This patch fixes the issue.
+    
+    Signed-off-by: David Kozub <zub@linux.fjfi.cvut.cz>
+    Signed-off-by: Henrik Rydberg <rydberg@euromail.se>
+
 commit 5a6773f85a77e78dbbb915e32768aa24e1c83124
 Author: Henrik Rydberg <rydberg@euromail.se>
 Date:   Mon Feb 20 16:03:05 2012 +0100
