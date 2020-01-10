@@ -2,8 +2,8 @@
 #global gitdate 20110105
 
 Name:           mtdev
-Version:        1.1.3
-Release:        4%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Version:        1.1.5
+Release:        5%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 Summary:        Multitouch Protocol Translation Library
 
 Group:          System Environment/Libraries
@@ -75,8 +75,26 @@ rm -rf %{buildroot}
 %{_bindir}/mtdev-test
 
 %changelog
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1.3-4
-- Mass rebuild 2013-12-27
+* Mon Apr 13 2015 Benjamin Tissoires <benjamin.tissoires@redhat.com> 1.1.5-5
+- restore ExcludeArch for RHEL. We do not ship libinput so it is not a requirement.
+
+* Sun Aug 17 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.5-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.5-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
+* Wed May 21 2014 Dan Horák <dan[at]danny.cz> 1.1.5-2
+- drop ExcludeArch, mtdev becomes the required part of the desktop stack
+
+* Mon Mar 24 2014 Peter Hutterer <peter.hutterer@redhat.com> 1.1.5-1
+- mtdev 1.1.5
+
+* Mon Aug 12 2013 Peter Hutterer <peter.hutterer@redhat.com> 1.1.4-1
+- mtdev 1.1.4
+
+* Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.3-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
 * Wed Apr 03 2013 Peter Hutterer <peter.hutterer@redhat.com> 1.1.3-3
 - Less RHEL customization
